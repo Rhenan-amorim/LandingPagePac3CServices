@@ -1,0 +1,68 @@
+@import "tailwindcss";
+@import "./originkit-section-theme.css";
+@import "./originkit-section-themes.css";
+
+@source "../components";
+@source "../app";
+
+/* ── Marca 3C / PAC ─────────────────────────────────────────────
+   Sistema visual aprendido do portfólio:
+   Tipografia: Montserrat (Black em títulos, Regular no corpo)
+   Cor de assinatura: azul #1366A4 + cinzas quentes + verde/laranja
+   ---------------------------------------------------------------- */
+@theme {
+  /* Remapeia as fontes do Hero 06 para Montserrat */
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-helvetica-neue: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-redhat: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+
+  /* Paleta da marca (habilita bg-brand-*, text-brand-*) */
+  --color-brand-blue: #1366a4;
+  --color-brand-blue-dark: #0e65a1;
+  --color-brand-blue-light: #43a0d9;
+  --color-brand-green: #1a8b4a;
+  --color-brand-green-dark: #219e49;
+  --color-brand-orange: #dd6b38;
+  --color-brand-orange-dark: #ce5328;
+
+  --color-ink: #121516;
+  --color-ink-soft: #3b3a3a;
+  --color-body: #5b5b59;
+  --color-muted: #b5b8b7;
+  --color-line: #e0e1e0;
+  --color-surface: #f6f9f9;
+  --color-surface-2: #eaebea;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-body);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Utilitário: gradiente da marca (azul → verde → laranja, como a logo) */
+.text-gradient-3c {
+  background: linear-gradient(100deg, #1366a4 0%, #1a8b4a 50%, #dd6b38 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Verde → laranja: para elementos sobre o fundo azul da marca */
+.text-gradient-warm {
+  background: linear-gradient(120deg, #5cc35a 0%, #ffc79e 52%, #ff8f4d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Fundo azul da marca (faixas escuras viram azul, sem preto) */
+.bg-brand-band {
+  background: linear-gradient(150deg, #1571b3 0%, #0e65a1 100%);
+}
